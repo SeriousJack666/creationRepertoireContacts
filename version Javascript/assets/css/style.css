@@ -1,0 +1,36 @@
+
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.conteneur {
+	height: 500px;
+	width: 450px;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+}
+
+.enTete { display: flex;
+	flex-flow: column;
+	align-items: center;
+
+}
+
+.enTete h1 {
+	text-align: center;
+	color: rgb(178, 36, 48);
+	width: 50%;
+}
+
+img {
+	height : 100px;
+	width: 100px;
+}
+
+.menuDeroulant {
+
+}
