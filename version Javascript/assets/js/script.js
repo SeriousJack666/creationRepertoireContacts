@@ -34,5 +34,10 @@ select.addEventListener("change", event => {
 });	
 
 
+//========= Stocker et afficher nombre total de contacts==========//
+
+var nbtot = document.getElementById('option1').childElementCount-1;
+
+document.getElementById('nbtotal').textContent = nbtot;
 
 
