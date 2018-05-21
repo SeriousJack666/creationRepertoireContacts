@@ -1,4 +1,5 @@
 
+/*====== Le cadre ===*/
 
 body {
 	display: flex;
@@ -7,12 +8,17 @@ body {
 }
 
 .conteneur {
-	height: 500px;
+	height: 100%;
 	width: 450px;
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
 }
+
+
+
+
+/*=====  1er bloc  =====*/
 
 .enTete { display: flex;
 	flex-flow: column;
@@ -27,10 +33,44 @@ body {
 }
 
 img {
-	height : 100px;
-	width: 100px;
+	height : 200px;
+	width: 200px;
 }
 
-.menuDeroulant {
 
+
+
+/*======  2e bloc  =====*/
+
+form {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: space-around;
 }
+
+
+
+
+/*======  3e bloc  =====*/
+
+
+	/*=== Choix 0 par défaut  Ecran accueil  ===*/
+
+
+
+
+
+	/*=== Choix 1 ===*/
+
+
+
+
+
+	/*=== Choix 2 ===*/
+
+
+
+
+
+	/*=== Choix 3 ===*/
