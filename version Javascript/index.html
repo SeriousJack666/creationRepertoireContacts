@@ -12,72 +12,67 @@
 
 <!--================   3 morceaux  ==============-->
 
-   <!--=================  le 1er  ============-->  
 
-
-         <div class="enTete">
+      <!--===================  le 1er  ==================-->  
+         <div id="enTete">
             <h1>Gestionnaire de contacts</h1>
             <img src="assets/img/avatar.png" alt="avatar" />
          </div>
+      <!--===============================================-->
 
 
-   <!--=================  le 2e  =============-->
 
 
+      <!--======================  le 2e  ====================-->
          <div id="choix">
-
             <select id="choix_options" name="choix_options">
-
                <option value="0">Que voulez-vous faire ?</option>
-
                <option value="1">Lister les concacts</option>
-
                <option value="2">Ajouter un contact</option>
-
                <option>Nombre de contacts</option>
-
             </select>
-
          </div>
+      <!--===================================================-->
 
 
-   <!--=====  le 3e, en fonction du choix du 2e  =====-->
 
 
-      <!--=========  div écran d'accueil  )======--> 
+      <!--=======  le 3e, en fonction du choix du 2e  =======-->
 
+
+         <!--===== div écran d'accueil  Choix 0 ====--> 
          <div id="option0" style="display: block;">
             <h3>Choisir une option</h3>
          </div>
+         <!--=======================================-->
 
-      <!--=============== Choix 1 ==============-->
 
+
+         <!--=============== Choix 1 ===============-->
          <div id="option1" style="display: none;">
             <h3>Liste de vos contacts</h3>
-
             <ul>
                <li>nom1_test</li>
                <li>num1_test</li>
             </ul>
-
             <ul>
                <li>nom2_test</li>
                <li>num2_test</li>
             </ul>
-
             <ul>
                <li>nom3_test</li>
                <li>num3_test</li>
             </ul>
          </div>
+         <!--======================================-->
 
-      <!--=============== Choix 2 ==============-->
 
+
+         <!--=============== Choix 2 ==============-->
          <div id="option2"  style="display: none;">
             <form action="" method="get">
                <label for="GET-name">Entrez son nom :</label>
                <input type="text" name="name" id="GET-name">
-            
                <label for="GET-firstname">Entrez son prénom :</label>
                <input type="text" name="firstname" id="GET-firstname">
                <label for="GET-firstname">Entrez son numéro :</label>
@@ -85,13 +80,15 @@
                <input type="submit" value="Valider">                  
             </form>
          </div>
+         <!--=======================================-->
 
-      <!--================ Choix 3 ==============-->
 
+
+         <!--================ Choix 3 ==============-->
          <div id="option3" style="display: none;">
             <p>Vous avez <span></span>contacts</p>
          </div>
-
+         <!--=======================================-->
 
       </div>
 

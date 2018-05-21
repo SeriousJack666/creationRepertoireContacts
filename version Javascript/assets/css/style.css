@@ -20,13 +20,13 @@ body {
 
 /*=====  1er bloc  =====*/
 
-.enTete { display: flex;
+#enTete { display: flex;
 	flex-flow: column;
 	align-items: center;
 
 }
 
-.enTete h1 {
+#enTete h1 {
 	text-align: center;
 	color: rgb(178, 36, 48);
 	width: 50%;
