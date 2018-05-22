@@ -12,7 +12,7 @@
 
 <!--================   3 morceaux  ==============-->
 
-      <!--===================  le 1er  ==================-->  
+      <!--===================  le 1er  ==================-->
          <div id="enTete">
             <h1>Gestionnaire de contacts</h1>
             <img src="assets/img/avatar.png" alt="avatar" />
@@ -34,7 +34,7 @@
 
       <!--=======  le 3e, en fonction du choix du 2e  =======-->
 
-         <!--===== Choix 0 div écran d'accueil ====--> 
+         <!--===== Choix 0 div écran d'accueil ====-->
          <div id="option0" style="display: block;">
             <h3>Choisir une option</h3>
          </div>
@@ -44,8 +44,8 @@
          <div id="option1" style="display: none;">
             <h3>Liste de vos contacts</h3>
             <ul>
-               <li>name1_test + firstname1_test</li>
-               <li>num1_test</li>
+               <li id="nom_prenom"></li>
+               <li id ="numtel"></li>
             </ul>
             <ul>
                <li>name2_test + firstname2_test</li>
@@ -60,14 +60,14 @@
 
          <!--=============== Choix 2 ==============-->
          <div id="option2"  style="display: none;">
-            <form action="" method="get">
-               <label for="GET-name">Entrez son nom :</label>
-               <input type="text" name="name" id="GET-name">
-               <label for="GET-firstname">Entrez son prénom :</label>
-               <input type="text" name="firstname" id="GET-firstname">
-               <label for="GET-firstname">Entrez son numéro :</label>
-               <input type="text" name="phone_number" id="GET-phone_number">
-               <input type="submit" value="Valider">                  
+            <form action="" method="get" onsubmit="return false">
+               <label for="get_name">Entrez son nom :</label>
+               <input type="text" name="name" id="get_name">
+               <label for="get_firstname">Entrez son prénom :</label>
+               <input type="text" name="firstname" id="get_firstname">
+               <label for="get_firstname">Entrez son numéro :</label>
+               <input type="text" name="phone_number" id="get_phone_number">
+               <input type="submit" id="button" value="Valider">
             </form>
          </div>
          <!--=======================================-->
