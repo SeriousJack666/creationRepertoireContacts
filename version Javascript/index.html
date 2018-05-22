@@ -12,7 +12,7 @@
 
 <!--================   3 morceaux  ==============-->
 
-      <!--===================  le 1er  ==================-->  
+      <!--===================  le 1er  ==================-->
          <div id="enTete">
             <h1>Gestionnaire de contacts</h1>
             <img src="assets/img/avatar.png" alt="avatar" />
@@ -34,7 +34,7 @@
 
       <!--=======  le 3e, en fonction du choix du 2e  =======-->
 
-         <!--===== Choix 0 div écran d'accueil ====--> 
+         <!--===== Choix 0 div écran d'accueil ====-->
          <div id="option0" style="display: block;">
             <h3>Choisir une option</h3>
          </div>
@@ -60,14 +60,14 @@
 
          <!--=============== Choix 2 ==============-->
          <div id="option2"  style="display: none;">
-            <form action="" method="get">
+            <form action="" method="get" onsubmit="return false">
                <label for="GET-name">Entrez son nom :</label>
-               <input type="text" name="name" id="GET-name">
+               <input type="text" name="name" id="GET-name" onblur="verifNom(this)">
                <label for="GET-firstname">Entrez son prénom :</label>
-               <input type="text" name="firstname" id="GET-firstname">
+               <input type="text" name="firstname" id="GET-firstname" onblur="verifPrenom(this)">
                <label for="GET-firstname">Entrez son numéro :</label>
-               <input type="text" name="phone_number" id="GET-phone_number">
-               <input type="submit" value="Valider">                  
+               <input type="text" name="phone_number" id="GET-phone_number" onblur="verifNum(this)">
+               <input type="submit" value="Valider">
             </form>
          </div>
          <!--=======================================-->
