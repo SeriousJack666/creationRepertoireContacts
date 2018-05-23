@@ -10,55 +10,42 @@
 
       <div class="conteneur">
 
-<!--================   3 morceaux  ==============-->
+<!--================ 3 blocs ==============-->
 
-      <!--===================  le 1er  ==================-->
+      <!--_______le 1er_______-->
          <div id="enTete">
             <h1>Gestionnaire de contacts</h1>
             <img src="assets/img/avatar.png" alt="avatar" />
          </div>
-      <!--===============================================-->
 
 
-      <!--======================  le 2e  ====================-->
+      <!--______le 2e_______-->
          <div id="choix">
             <select id="choix_options" name="choix_options">
-               <option value="0">Que voulez-vous faire ?</option>
-               <option value="1">Lister les concacts</option>
-               <option value="2">Ajouter un contact</option>
+               <option>Que voulez-vous faire ?</option>
+               <option>Lister les concacts</option>
+               <option>Ajouter un contact</option>
                <option>Nombre de contacts</option>
             </select>
          </div>
-      <!--===================================================-->
 
 
-      <!--=======  le 3e, en fonction du choix du 2e  =======-->
+      <!--______le 3e, en fonction du choix du 2e_____-->
 
-         <!--===== Choix 0 div écran d'accueil ====-->
+         <!--  //Choix 0 div écran d'accueil//  -->
          <div id="option0" style="display: block;">
             <h3>Choisir une option</h3>
          </div>
-         <!--=======================================-->
 
-         <!--=============== Choix 1 ===============-->
+
+         <!--           //Choix 1//          -->
          <div id="option1" style="display: none;">
             <h3>Liste de vos contacts</h3>
-            <ul>
-               <li id="nom_prenom"></li>
-               <li id ="numtel"></li>
-            </ul>
-            <ul>
-               <li>name2_test + firstname2_test</li>
-               <li>num2_test</li>
-            </ul>
-            <ul>
-               <li>name3_test + firstname3_test</li>
-               <li>num3_test</li>
-            </ul>
+           <div id="conteneur_uls"></div>
          </div>
-         <!--======================================-->
 
-         <!--=============== Choix 2 ==============-->
+
+         <!--           //Choix 2//          -->
          <div id="option2"  style="display: none;">
             <form action="" method="get" onsubmit="return false">
                <label for="get_name">Entrez son nom :</label>
@@ -70,15 +57,13 @@
                <input type="submit" id="button" value="Valider">
             </form>
          </div>
-         <!--=======================================-->
 
-         <!--================ Choix 3 ==============-->
+
+         <!--           //Choix 3//           -->
          <div id="option3" style="display: none;">
             <p>Vous avez <span id="nbtotal"></span> contacts</p>
          </div>
-         <!--=======================================-->
 
-      <!--==============  Clôture 3e morceau  ========================-->
 
       </div>
 

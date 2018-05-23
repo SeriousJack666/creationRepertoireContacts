@@ -1,7 +1,6 @@
 
 
-//=========  Sélection de la div à afficher ======//
-
+//____________Sélection de la div à afficher____________
 var select = document.getElementById("choix_options");
 
 select.addEventListener("change", event => {
@@ -30,27 +29,23 @@ select.addEventListener("change", event => {
 			option2.style.display = 'none';
 			option3.style.display = 'none';
 		}
+		window.onload;
 	}
 });
 
 
-//========= Stocker et afficher nombre total de contacts==========//
-
-var nbtot = document.getElementById('option1').childElementCount-1;
-
-document.getElementById('nbtotal').textContent = nbtot;
-
-
-//==================================
+//_______________Créer l'Almanach, oui, ce mot est cool__________
 var almanach = new Array();
+
 almanach[0] = {"name" : "Bismuth", "firstname" : "Paul", "phone_number" : "0648528998"}
 almanach[1] = {"name" : "Dupont", "firstname" : "Dupond", "phone_number" : "0976543258"}
 almanach[2] = {"name" : "XIV", "firstname" : "Louis", "phone_number" : "0600000000"}
 
-
+//_______________Stocker inputs du nouveau contact_______________
 var data_contact_vide = {"name" : "", "firstname" : "", "phone_number":""}
 
 function getNewContact() {
+    //__________ partie almanach_________
 	var nameField = document.getElementById("get_name").value;
 	var firstnameField = document.getElementById("get_firstname").value;
 	var phone_numberField = document.getElementById("get_phone_number").value;
@@ -61,92 +56,73 @@ function getNewContact() {
 	data_contact_remplie.firstname = firstnameField;
 	data_contact_remplie.phone_number = phone_numberField;
 	almanach.push(data_contact_remplie);
-console.log(almanach[0].name);
-  //document.getElementById(nom_prenom).textContent = almanach[0].name;
+	console.log(almanach);
+
+	//____________partie DOM______________
+	
 }
 
 var bouton = document.getElementById('button');
 bouton.addEventListener('click', getNewContact, false);
 
 
+function addUl(i){
+	ulistNode = document.getElementById('conteneur_uls'),
+	ulNode = document.createElement("UL");	
+	ulNode.setAttribute("id", "contact"+i);
+	ulistNode.appendChild(ulNode);
+}
 
-// =========== Verifié les champs contacts ====================
+function addLi1(i){
 
-// function surligne(erreur)
-// {
-//    if(erreur)
-//       champ.style.backgroundColor = "#fba";
-//    else
-//       champ.style.backgroundColor = "";
-// }
-//
-//
-// 			// ===verifié Nom===
-//
-// function verifChamp()
-// {
-//
-//    if(champ.value.length < 2 || champ.value.length > 20)
-//    {
-//       surligne(champ, true);
-//       return false;
-//    }
-//    else
-//    {
-//       surligne(champ, false);
-//       return true;
-//    }
-// }
+	var contact = almanach[i];
 
-			// ===verifié Prenom===
+	var txtVal1 = contact.name,
+		txtVal2 = contact.firstname,
+		txtVal = txtVal1+" "+txtVal2;
 
-// function verifPrenom(champ)
-// {
-//    if(champ.value.length < 2 || champ.value.length > 20)
-//    {
-//       surligne(champ, true);
-//       return false;
-//    }
-//    else
-//    {
-//       surligne(champ, false);
-//       return true;
-//    }
-// }
-//
-// 			// ===verifié Numero===
-//
-// function verifNum(champ)
-// {
-//    var num = parseInt(champ.value);
-//    if(isNaN(num) || champ.value.length < 10 || champ.value.length > 10)
-//    {
-//       surligne(champ, true);
-//       return false;
-//    }
-//    else
-//    {
-//       surligne(champ, false);
-//       return true;
-//    }
-// }
-//
-// // ===verifié le tout===
-//
-// function verifForm(f)
-// {
-//    var nomOk = verifNom(f.name);
-//    var prenomOk = verifPrenom(f.firstname);
-//    var numOk = verifNum(f.phone_number);
-//
-//    if(nomOk && prenomOk && numOk)
-//       return true;
-//    else
-//    {
-//       alert("Veuillez remplir correctement tous les champs");
-//       return false;
-//    }
-// }
+	var listNode = document.getElementById('contact'+i),
+		liNode = document.createElement("LI"),
+		txtNode = document.createTextNode(txtVal);
+
+	liNode.setAttribute('id', "noms_contact"+i)
+	liNode.appendChild(txtNode);
+	listNode.appendChild(liNode);
+
+	return liNode;
+}
+
+function addLi2(i){
+
+	var contact = almanach[i];
+
+	var txtVal = contact.phone_number,
+		listNode = document.getElementById('contact'+i),
+		liNode = document.createElement("LI"),
+		txtNode = document.createTextNode(txtVal);
+
+	liNode.setAttribute('id', "num_contact"+i)
+	liNode.appendChild(txtNode);
+	listNode.appendChild(liNode);
+
+	return liNode;
+}
 
 
-// =========================
+//_________Déploit l'almanach dans la liste des Contacts_______//
+for ( var i=0; i < almanach.length; i++){
+	
+	addUl(i);
+	var blaze = addLi1(i) ;
+	ulNode.appendChild(blaze);
+	var nUm = addLi2(i);
+	ulNode.appendChild(nUm);
+}
+
+//________Stocker et afficher nombre total de contacts_______//
+
+var nbtot = almanach.length;
+
+document.getElementById('nbtotal').textContent = nbtot;
+
+
