@@ -8,10 +8,14 @@
 	2 pistes : une javascript, une php.
 
 	
-	
 	========== On est partis sur du javascript ========
 	
 	la base est claire, mérite les ajustements pour IE<9.
 
-	testetststetetetzahfiezvgfmlkeznvfmlkezlrnvlezrn,vlnrzvlrznvlkrevmkreanb
 
+
+==============  Phase fonctionnalités opérationelles ===========
+
+reste à faire apparaître le contact créé.
+
+Et le desIIIIIIIIIgn
