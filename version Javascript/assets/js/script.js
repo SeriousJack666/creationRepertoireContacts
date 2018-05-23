@@ -29,7 +29,6 @@ select.addEventListener("change", event => {
 			option2.style.display = 'none';
 			option3.style.display = 'none';
 		}
-		window.onload;
 	}
 });
 
@@ -44,37 +43,63 @@ almanach[2] = {"name" : "XIV", "firstname" : "Louis", "phone_number" : "06000000
 //_______________Stocker inputs du nouveau contact_______________
 var data_contact_vide = {"name" : "", "firstname" : "", "phone_number":""}
 
+  	 //__________//partie almanach//_________//
 function getNewContact() {
-    //__________ partie almanach_________
+
 	var nameField = document.getElementById("get_name").value;
 	var firstnameField = document.getElementById("get_firstname").value;
 	var phone_numberField = document.getElementById("get_phone_number").value;
 
-	var data_contact_remplie = data_contact_vide;
+	let data_contact_remplie = data_contact_vide;
 
 	data_contact_remplie.name = nameField;
 	data_contact_remplie.firstname = firstnameField;
 	data_contact_remplie.phone_number = phone_numberField;
 	almanach.push(data_contact_remplie);
-	console.log(almanach);
+};
 
-	//____________partie DOM______________
-	
-}
+    //________//partie DOM//__________//
+function addNewContact(){
+	var compteur = compteur;
+	let i = almanach[almanach.length+compteur];
+	addUl(i);
+	var blaze = addLi1(i) ;
+	ulNode.appendChild(blaze);
+	var nUm = addLi2(i);
+	ulNode.appendChild(nUm);
+};
+
+
+
+
+var compteur = 0;
+function idclick(){compteur+=1;};
 
 var bouton = document.getElementById('button');
+bouton.addEventListener('click', idclick, false);
 bouton.addEventListener('click', getNewContact, false);
+bouton.addEventListener('click', addNewContact, false);
+bouton.addEventListener('click', event =>{
+	var nbtot = almanach.length;
+	document.getElementById('nbtotal').textContent = nbtot;
+	console.log(almanach);
+	var testDOM = document.getElementsByTagName('ul');
+	console.log(testDOM);
+	console.log(compteur);
+});
 
 
-function addUl(i){
+
+
+function addUl(){
 	ulistNode = document.getElementById('conteneur_uls'),
 	ulNode = document.createElement("UL");	
 	ulNode.setAttribute("id", "contact"+i);
 	ulistNode.appendChild(ulNode);
-}
+};
 
-function addLi1(i){
 
+function addLi1(){
 	var contact = almanach[i];
 
 	var txtVal1 = contact.name,
@@ -88,11 +113,13 @@ function addLi1(i){
 	liNode.setAttribute('id', "noms_contact"+i)
 	liNode.appendChild(txtNode);
 	listNode.appendChild(liNode);
-
+	
 	return liNode;
-}
+};
 
-function addLi2(i){
+
+
+function addLi2(){
 
 	var contact = almanach[i];
 
@@ -106,18 +133,26 @@ function addLi2(i){
 	listNode.appendChild(liNode);
 
 	return liNode;
-}
+};
+
 
 
 //_________Déploit l'almanach dans la liste des Contacts_______//
-for ( var i=0; i < almanach.length; i++){
-	
-	addUl(i);
-	var blaze = addLi1(i) ;
-	ulNode.appendChild(blaze);
-	var nUm = addLi2(i);
-	ulNode.appendChild(nUm);
+
+if(compteur == 0){
+	for ( var i=0; i < almanach.length; i++){
+		
+		addUl();
+		var blaze = addLi1() ;
+		ulNode.appendChild(blaze);
+		var nUm = addLi2();
+		ulNode.appendChild(nUm);
+	}
 }
+else if (compteur == 1){
+
+	}
+
 
 //________Stocker et afficher nombre total de contacts_______//
 
@@ -126,4 +161,3 @@ var nbtot = almanach.length;
 document.getElementById('nbtotal').textContent = nbtot;
 
 
-//test
