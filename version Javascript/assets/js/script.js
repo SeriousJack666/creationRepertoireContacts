@@ -59,7 +59,7 @@ function getNewContact() {
 	console.log(almanach);
 
 	//____________partie DOM______________
-	
+
 }
 
 var bouton = document.getElementById('button');
@@ -68,7 +68,7 @@ bouton.addEventListener('click', getNewContact, false);
 
 function addUl(i){
 	ulistNode = document.getElementById('conteneur_uls'),
-	ulNode = document.createElement("UL");	
+	ulNode = document.createElement("UL");
 	ulNode.setAttribute("id", "contact"+i);
 	ulistNode.appendChild(ulNode);
 }
@@ -111,7 +111,7 @@ function addLi2(i){
 
 //_________Déploit l'almanach dans la liste des Contacts_______//
 for ( var i=0; i < almanach.length; i++){
-	
+
 	addUl(i);
 	var blaze = addLi1(i) ;
 	ulNode.appendChild(blaze);
