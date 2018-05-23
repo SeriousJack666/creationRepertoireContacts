@@ -126,3 +126,4 @@ var nbtot = almanach.length;
 document.getElementById('nbtotal').textContent = nbtot;
 
 
+//test
