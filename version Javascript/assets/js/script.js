@@ -40,12 +40,13 @@ almanach[0] = {"name" : "Bismuth", "firstname" : "Paul", "phone_number" : "06485
 almanach[1] = {"name" : "Dupont", "firstname" : "Dupond", "phone_number" : "0976543258"}
 almanach[2] = {"name" : "XIV", "firstname" : "Louis", "phone_number" : "0600000000"}
 
+
 //_______________Stocker inputs du nouveau contact_______________
 var data_contact_vide = {"name" : "", "firstname" : "", "phone_number":""}
 
+
   	 //__________//partie almanach//_________//
 function getNewContact() {
-
 	var nameField = document.getElementById("get_name").value;
 	var firstnameField = document.getElementById("get_firstname").value;
 	var phone_numberField = document.getElementById("get_phone_number").value;
@@ -75,6 +76,8 @@ function addNewContact(){
 var compteur = 0;
 function idclick(){compteur+=1;};
 
+
+	//____________partie DOM______________
 var bouton = document.getElementById('button');
 bouton.addEventListener('click', idclick, false);
 bouton.addEventListener('click', getNewContact, false);
@@ -93,7 +96,7 @@ bouton.addEventListener('click', event =>{
 
 function addUl(){
 	ulistNode = document.getElementById('conteneur_uls'),
-	ulNode = document.createElement("UL");	
+	ulNode = document.createElement("UL");
 	ulNode.setAttribute("id", "contact"+i);
 	ulistNode.appendChild(ulNode);
 };
@@ -139,7 +142,7 @@ function addLi2(){
 
 //_________Déploit l'almanach dans la liste des Contacts_______//
 
-if(compteur == 0){
+/*if(compteur == 0){
 	for ( var i=0; i < almanach.length; i++){
 		
 		addUl();
@@ -147,17 +150,20 @@ if(compteur == 0){
 		ulNode.appendChild(blaze);
 		var nUm = addLi2();
 		ulNode.appendChild(nUm);
-	}
-}
-else if (compteur == 1){
+	}*/
+for ( var i=0; i < almanach.length; i++){
 
-	}
+	addUl(i);
+	var blaze = addLi1(i) ;
+	ulNode.appendChild(blaze);
+	var nUm = addLi2(i);
+	ulNode.appendChild(nUm);
+}
 
 
 //________Stocker et afficher nombre total de contacts_______//
 
 var nbtot = almanach.length;
-
 document.getElementById('nbtotal').textContent = nbtot;
 
 
